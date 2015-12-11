@@ -1,0 +1,47 @@
+doctype html(lang='en')
+head
+    meta(charset='utf-8')
+    |     
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    |     
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    |     
+    meta(name='description', content='')
+    |     
+    meta(name='author', content='')
+    |     
+    link(rel='icon', href='../../favicon.ico')
+    |     
+    title Signin Template for Bootstrap
+    // Bootstrap core CSS
+    link(href='/stylesheets/bootstrap.min.css', rel='stylesheet')
+    // Custom styles for this template
+    link(href='/stylesheets/signup.css', rel='stylesheet')  
+  body
+    .container
+      form.form-group(role='form', style = 'width:300px;text-align:center;margin:0 auto', method = "POST")
+        div.col-sm-30
+          h2.form-signin-heading Tell us about yourself
+          |         
+          label(for='inputEmail') Highest Degree
+          |         
+          select.form-control
+            option HighSchool
+            option Undergrad
+            option Grad
+          | 
+          br
+          label(for='inputPassword') Personality
+          |         
+          select.form-control
+            option Introvert
+            option Extrovert
+          |         
+          .checkbox
+            label
+              input(type='checkbox', value='remember-me')
+              |  Remember me
+          |         
+          button.btn.btn-lg.btn-primary.btn-block(type='submit') Sign in
+    // /container
+   

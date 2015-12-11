@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  div
+    h1= title
+    p Welcome to #{title}
+    div(ng-repeat = 'product in store.products')
+      p Word : {{product.name}}
+      p Meaning : {{product.meaning}}
+      button(ng-show = 'product.canLearn') Learn

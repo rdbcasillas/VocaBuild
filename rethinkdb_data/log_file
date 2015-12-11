@@ -1,0 +1,15 @@
+2015-10-08T13:52:00.311861000 0.462028s info: Initializing directory /Users/rdbcasillas/programming/vocabBuild/rethinkdb_data
+2015-10-08T13:52:00.313418000 0.463586s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/rdbcasillas/programming/vocabBuild/rethinkdb_data' did not already exist or is empty.)
+2015-10-08T13:52:00.313505000 0.463672s info: Running rethinkdb 1.14.1 (CLANG 6.0 (clang-600.0.51))...
+2015-10-08T13:52:00.318812000 0.468980s info: Running on Darwin 14.5.0 x86_64
+2015-10-08T13:52:00.318852000 0.469019s info: Using cache size of 100 MB
+2015-10-08T13:52:00.318871000 0.469038s warn: Requested cache size is larger than available memory.
+2015-10-08T13:52:00.318882000 0.469049s warn: Cache size is very low and may impact performance.
+2015-10-08T13:52:00.318893000 0.469060s info: Loading data from directory /Users/rdbcasillas/programming/vocabBuild/rethinkdb_data
+2015-10-08T13:52:00.541405000 0.691572s info: Listening for intracluster connections on port 29015
+2015-10-08T13:52:00.543082000 0.693249s info: Listening for client driver connections on port 28015
+2015-10-08T13:52:00.543201000 0.693368s info: Listening for administrative HTTP connections on port 8080
+2015-10-08T13:52:00.543221000 0.693388s info: Listening on addresses: 127.0.0.1, ::1
+2015-10-08T13:52:00.543236000 0.693403s info: To fully expose RethinkDB on the network, bind to all addresses
+2015-10-08T13:52:00.543251000 0.693418s info: by running rethinkdb with the `--bind all` command line option.
+2015-10-08T13:52:00.543265000 0.693432s info: Server ready

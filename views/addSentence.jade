@@ -1,0 +1,269 @@
+doctype html(lang='en')
+html(ng-app = 'plunker')
+  head
+      meta(http-equiv='content-type', content='text/html; charset=UTF-8')
+      | &#x9;&#x9;
+      meta(charset='utf-8')
+      | &#x9;&#x9;
+      title Bootstrap 3 Control Panel
+      | &#x9;&#x9;
+      meta(name='generator', content='Bootply')
+      | &#x9;&#x9;
+      meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+      | &#x9;&#x9;
+      link(href='stylesheets/bootstrap.min.css', rel='stylesheet')
+      link(href='stylesheets/chosen.css', rel='stylesheet')
+      link(href='stylesheets/prism.css', rel='stylesheet')
+      link(href='stylesheets/bootstrap-tagsinput.css', rel='stylesheet')
+      link(href='stylesheets/ng-tags-input.min.css', rel='stylesheet')
+      //if lt IE 9
+        script(src='//html5shim.googlecode.com/svn/trunk/html5.js')
+      | &#x9;&#x9;
+      link(href='stylesheets/styles.css', rel='stylesheet')
+
+    body(ng-controller="MainCtrl")
+      // Header
+      #top-nav.navbar.navbar-inverse.navbar-static-top
+        .container
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+              span.icon-toggle
+            | 
+            a.navbar-brand(href='#') Control Panel
+          | 
+          .navbar-collapse.collapse
+            ul.nav.navbar-nav.navbar-right
+              li.dropdown
+                a.dropdown-toggle(role='button', data-toggle='dropdown', href='#')
+                  i.glyphicon.glyphicon-user
+                  |  Admin
+                  span.caret
+                | 
+                ul#g-account-menu.dropdown-menu(role='menu')
+                  li
+                    a(href='#') My Profile
+                  | 
+                  li
+                    a(href='#')
+                      i.glyphicon.glyphicon-lock
+                      |  Logout
+        // /container
+      // /Header
+      // Main
+      .container
+        // upper section
+        .row
+          .col-sm-3
+            // left
+            h3
+              i.glyphicon.glyphicon-briefcase
+              |  Toolbox
+            | 
+            hr
+            | 
+            | 
+            ul.nav.nav-stacked
+              li
+                a(href='javascript:;')
+                  i.glyphicon.glyphicon-flash
+                  |   Alerts
+              | 
+              li
+                a(href='/myvocab')
+                  i.glyphicon.glyphicon-link
+                  |  MyVocab
+              | 
+              li
+                a(href='javascript:;')
+                  i.glyphicon.glyphicon-list-alt
+                  |  Reports
+              | 
+              li
+                a(href='javascript:;')
+                  i.glyphicon.glyphicon-book
+                  |  Books
+              | 
+              li
+                a(href='javascript:;')
+                  i.glyphicon.glyphicon-briefcase
+                  |  Tools
+              | 
+              li
+                a(href='javascript:;')
+                  i.glyphicon.glyphicon-time
+                  |  Real-time
+              | 
+              li
+                a(href='javascript:;')
+                  i.glyphicon.glyphicon-plus
+                  |  Advanced..
+            | 
+            | 
+            hr
+          // /span-3
+          .col-sm-9
+            // column 2
+            h3
+              i.glyphicon.glyphicon-dashboard
+              |  Dashboard
+            | 
+            | 
+            | 
+            hr
+            | 
+            | &#x9;
+            .row
+              // center left
+              .col-md-7
+                .panel.panel-default
+                  .panel-heading
+                    .panel-title
+                      i.glyphicon.glyphicon-wrench.pull-right
+                      | 
+                      h4 Add a sentence
+                  .panel-body
+                    form.form.form-vertical(method = 'POST')
+                      .control-group
+                        label Sentence
+                        | 
+                        .controls
+                          textarea.form-control(name = 'sentence')
+                      | 
+                      | 
+                      .control-group
+                        label Tags
+                        | 
+                        .controls
+                          tags-input(style = 'height:50px',ng-model="tags")
+                            auto-complete(source="loadTags()")  
+                      | 
+                      | 
+                      br
+                      .control-group
+                        label Select
+                        | 
+                        .controls
+                          select.form-control(data-placeholder = 'Choose a Tag...', multiple class = 'chosen-select-width')
+                            option
+                            option General Question
+                            option Server Issues
+                            option Billing Question
+                      | 
+                      | 
+                      .control-group
+                        label
+                        | 
+                        .controls
+                          button.btn.btn-primary(type='submit')
+                            | Save
+            // tabs
+            .container
+              ul#myTab.nav.nav-tabs
+                li.active
+                  a(href='#profile', data-toggle='tab') Profile
+                | 
+                li
+                  a(href='#messages', data-toggle='tab') Messages
+                | 
+                li
+                  a(href='#settings', data-toggle='tab') Settings
+              | 
+              | 
+              .tab-content
+                #profile.tab-pane.active
+                  h4
+                    i.glyphicon.glyphicon-user
+                  |             Lorem profile dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+                  | 
+                  p
+                    | Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+                    | dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+                    | Aliquam in felis sit amet augue.
+                | 
+                #messages.tab-pane
+                  h4
+                    i.glyphicon.glyphicon-comment
+                  |             Message ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+                  | 
+                  p
+                    | Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+                    | dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+                    | Aliquam in felis sit amet augue.
+                | 
+                #settings.tab-pane
+                  h4
+                    i.glyphicon.glyphicon-cog
+                  |             Lorem settings dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+                  | 
+                  p
+                    | Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+                    | dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+                    | Aliquam in felis sit amet augue.
+
+            // /panel
+          // /col
+        // /row
+      // /container
+      // /Main
+      footer.text-center
+        | This Bootstrap 3 dashboard layout is compliments of
+        a(href='http://www.bootply.com/85850')
+          strong Bootply.com
+      #addWidgetModal.modal
+        .modal-dialog
+          .modal-content
+            .modal-header
+              button.close(type='button', data-dismiss='modal', aria-hidden='true') &times;
+              | 
+              h4.modal-title Add Widget
+            | 
+            .modal-body
+              p Add a widget stuff here..
+            | 
+            .modal-footer
+              a.btn(href='#') Close
+              | 
+              a.btn.btn-primary(href='#') Save changes
+          // /.modal-content
+        // /.modal-dalog
+      // /.modal
+      // script references
+
+
+
+
+
+      script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js')
+      script(src='javascripts/chosen.jquery.min.js')
+      | &#x9;&#x9;
+      script(src='javascripts/bootstrap-3.2.0.min.js')
+      script(src='javascripts/bootstrap-tagsinput.js')
+      script(src='javascripts/bloodhound.js')
+      script(src='javascripts/typeahead.jquery.js')
+      script(src='javascripts/bootstrap3-typeahead.js')
+      script(src='javascripts/prism.js')
+      script(src = '/javascripts/angular.min.js')
+      script(src ='javascripts/ng-tags-input.min.js')
+      script(src = 'javascripts/bluebird.js')
+      script(src = 'javascripts/ngtagstest.js')
+      
+      script.
+        /*
+        var tags = ['interview', 'meeting', 'gossip'];
+        var tagnames = new Bloodhound({
+          datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+          queryTokenizer: Bloodhound.tokenizers.whitespace,
+          local: ['interview', 'meeting', 'gossip']
+        });
+        tagnames.initialize();
+        */
+
+        $('#tags').tagsinput({
+          typeahead: {
+            items: 4,
+            source: ['interview', 'meeting', 'gossip'],
+          }
+        });
+        $('.chosen-select-width').chosen();
+
+
